@@ -1,2 +1,2 @@
-pytube @ git+https://github.com/nficano/pytube@b0434113a03d0ea2982e42f43dc8cae63e3793ff
+-f git+https://github.com/nficano/pytube@b0434113a03d0ea2982e42f43dc8cae63e3793ff
 streamlit==0.69.2
