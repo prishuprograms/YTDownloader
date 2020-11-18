@@ -265,7 +265,8 @@ insta_profile_2 = 'https://www.instagram.com/_.gr.ey._/'
 
 st.sidebar.markdown('About Us 🔍 :  Reach out to 👇🏻')
 if st.sidebar.button("Instagram 🔗 : Prashans Dixit"):
-    st.sidebar.write(insta_profile)
+    webbrowser.open('https://www.instagram.com/dixit_prashans05/')
+#     st.sidebar.write('https://www.instagram.com/dixit_prashans05/')
 
 
 if st.sidebar.button("Instagram 🔗 : Muhammed Rajab"):
