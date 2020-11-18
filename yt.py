@@ -269,5 +269,5 @@ if st.sidebar.button("Instagram 🔗 : Prashans Dixit"):
 
 
 if st.sidebar.button("Instagram 🔗 : Muhammed Rajab"):
-#     webbrowser.open_new(insta_profile_2)
-       st.sidebar.write(insta_profile_2)
+    webbrowser.open(insta_profile_2)
+    st.sidebar.write(insta_profile_2)
