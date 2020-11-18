@@ -1,2 +1,3 @@
 pytube==9.7.2
 streamlit==0.69.2
+pathlib==1.0.1
