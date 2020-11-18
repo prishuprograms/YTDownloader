@@ -3,6 +3,9 @@ import streamlit as st
 import time
 import streamlit.components.v1 as components
 import webbrowser
+import os
+from pathlib import Path
+
 ###################################### Code ##########################################
 
 st.beta_set_page_config(page_title = 'Youtube Video Downloader', page_icon = '▶', layout='centered', initial_sidebar_state='collapsed')
@@ -13,8 +16,9 @@ def local_css(filename):
 
 local_css("style.css")
 
+path_to_download_folder = str(os.path.join(Path.home(), "Downloads"))
 
-st.markdown("<h1 style='text-align: center;'><div><span class='highlight blue'><span style='cursor: default'>Youtube Video Downloader  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No ADS!!</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'><div><span class='highlight blue'><span style='cursor: default'>Youtube Video Downloader &nbsp;&nbsp; No ADS!!</h1>", unsafe_allow_html=True)
 
 try:
     user_input = st.text_input("Enter the link of the video :")
@@ -48,15 +52,15 @@ def download():
     file_name_720p = yt.title + '_720p'   
     if st.button('Download : 144p (Lowest)'):
         # if st.button('Download'):
-        filters.get_lowest_resolution().download(filename = file_name_144p) #output_path = file_path,filename=file_name
+        filters.get_lowest_resolution().download(output_path = path_to_download_folder, filename = file_name_144p) #output_path = file_path,filename=file_name
         st.subheader(f"Downloaded the video with name : {file_name_144p} at default location in 144p resolution.") 
-        st.balloons()
+#         st.balloons()
 
     elif st.button('Download : 720p (Highest)'):
         # if st.button('Download'):
-        filters.get_highest_resolution().download(filename = file_name_720p) #output_path = file_path,filename=file_name
+        filters.get_highest_resolution().download(output_path = path_to_download_folder, filename = file_name_720p) #output_path = file_path,filename=file_name
         st.subheader(f"Downloaded the video with name : {file_name_720p} at default location in 720p resolution.") 
-        st.balloons()
+#         st.balloons()
 
 try:
     download()
@@ -261,8 +265,8 @@ insta_profile_2 = 'https://www.instagram.com/_.gr.ey._/'
 
 st.sidebar.markdown('About Us 🔍 :  Reach out to 👇🏻')
 if st.sidebar.button("Instagram 🔗 : Prashans Dixit"):
-    webbrowser.open_new_tab(insta_profile)
+    webbrowser.open_new(insta_profile)
 
 
 if st.sidebar.button("Instagram 🔗 : Muhammed Rajab"):
-    webbrowser.open_new_tab(insta_profile_2)
+    webbrowser.open_new(insta_profile_2)
